@@ -6,6 +6,7 @@ import 'package:untitled/flutterwebview.dart';
 import 'package:untitled/viewcontainer.dart';
 import 'day3.dart';
 import 'day6/ViewList.dart';
+import 'day7/firstPage.dart';
 import 'new82.dart';
 import 'newsdata.dart';
 
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.red,
       ),
-      home: ViewList(),
+      home: FirstPage(),
     );
   }
 }
