@@ -7,6 +7,7 @@ import 'package:untitled/viewcontainer.dart';
 import 'day3.dart';
 import 'day6/ViewList.dart';
 import 'day7/firstPage.dart';
+import 'fluttertab.dart';
 import 'new82.dart';
 import 'newsdata.dart';
 
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.red,
       ),
-      home: FirstPage(),
+      home: TabTest(),
     );
   }
 }

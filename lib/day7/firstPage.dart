@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/day7/secondPage.dart';
 
+
 class FirstPage extends StatelessWidget {
   const FirstPage({Key? key}) : super(key: key);
 
@@ -30,7 +31,7 @@ class FirstPage extends StatelessWidget {
             ),
             InkWell(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (builder)=>SecondPage()));
+           Navigator.push(context, MaterialPageRoute(builder: (builder)=>SecondPage()));
               },
               child: Container(
                 height: 40,

@@ -8,6 +8,16 @@ class Day3 extends StatefulWidget {
 }
 
 class _Day3State extends State<Day3> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+
+      content: Text('Your Msg'),
+    ));
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
