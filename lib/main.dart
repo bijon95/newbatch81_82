@@ -7,8 +7,11 @@ import 'package:untitled/viewcontainer.dart';
 import 'day3.dart';
 import 'day6/ViewList.dart';
 import 'day7/firstPage.dart';
+import 'day7/secondPage.dart';
+import 'day8/learnSetState.dart';
 import 'fluttertab.dart';
 import 'new82.dart';
+import 'new82/callfromInternet.dart';
 import 'newsdata.dart';
 
 void main() async{
@@ -41,7 +44,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.red,
       ),
-      home: TabTest(),
+      home: GetDataFromOnline(),
     );
   }
 }

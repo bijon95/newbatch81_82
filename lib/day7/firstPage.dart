@@ -16,7 +16,7 @@ class FirstPage extends StatelessWidget {
           children: [
             InkWell(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (builder)=>SecondPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (builder)=>SecondPage(data: "data",)));
               },
               child: Container(
                 height: 40,
@@ -31,7 +31,7 @@ class FirstPage extends StatelessWidget {
             ),
             InkWell(
               onTap: (){
-           Navigator.push(context, MaterialPageRoute(builder: (builder)=>SecondPage()));
+           Navigator.push(context, MaterialPageRoute(builder: (builder)=>SecondPage(data2: 12,)));
               },
               child: Container(
                 height: 40,
