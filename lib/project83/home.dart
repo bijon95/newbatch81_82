@@ -14,6 +14,8 @@ class _HomeState extends State<Home> {
 
 
   final Controller _controller = Get.put(Controller());
+
+
   @override
   void initState() {
     // TODO: implement initState
