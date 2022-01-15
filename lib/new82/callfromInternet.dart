@@ -2,41 +2,46 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-class GetDataFromOnline extends StatefulWidget {
-  const GetDataFromOnline({Key? key}) : super(key: key);
+
+import 'model.dart';
+class CallFromApi extends StatefulWidget {
+  const CallFromApi({Key? key}) : super(key: key);
 
   @override
-  _GetDataFromOnlineState createState() => _GetDataFromOnlineState();
+  _CallFromApiState createState() => _CallFromApiState();
 }
 
-class _GetDataFromOnlineState extends State<GetDataFromOnline> {
- var jsonString ;
- bool isLoading = true;
-  getData() async{
+class _CallFromApiState extends State<CallFromApi> {
 
-    var client = http.Client();
-    var url = "https://raw.githubusercontent.com/fahimxyz/bangladesh-geojson/master/bd-districts.json";
+  var postOfficeList = List<Postcode>.empty();
+
+ Future<List<Postcode>> callApi()async{
+    String url = "https://raw.githubusercontent.com/fahimxyz/bangladesh-geojson/master/bd-postcodes.json";
     Uri uri = Uri.parse(url);
-    var data =await client.get(uri);
-    if(data.statusCode==200){
-      isLoading = false;
-    }
-  jsonString = jsonDecode(data.body);
- print(jsonString["districts"][0]['bn_name']);
+    var responce = await http.get(uri);
+
+
+
+      var data = jsonDecode(responce.body);
+      var postdata = json.encode(data['postcodes']);
+print(postdata);
+      return postcodeFromJson(postdata);
+
   }
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    getData();
-  }
+  fatchPostCode()async{
+    postOfficeList   = await callApi();
 
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: isLoading ? Center(child: CircularProgressIndicator()) :
-      Text(jsonString["districts"][0]['bn_name']),
+      child: TextButton(
+        onPressed: (){
+          fatchPostCode();
+        },
+        child: Text("Get Api Data"),
+      ),
     );
   }
 }

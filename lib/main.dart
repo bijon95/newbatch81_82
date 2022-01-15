@@ -7,6 +7,7 @@ import 'package:untitled/project83/login.dart';
 import 'package:untitled/project_84/login.dart';
 import 'package:untitled/viewcontainer.dart';
 import 'day3.dart';
+import 'day36/getOnlineData.dart';
 import 'day6/ViewList.dart';
 import 'day7/firstPage.dart';
 import 'day7/secondPage.dart';
@@ -47,7 +48,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.red,
       ),
-      home: LoginPage(),
+      home: GetOnlineData(),
     );
   }
 }
